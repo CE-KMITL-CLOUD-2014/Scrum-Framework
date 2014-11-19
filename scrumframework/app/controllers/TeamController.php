@@ -36,11 +36,11 @@ class TeamController extends \BaseController {
         {
             if(Input::get('role')=='po')
             {
-                $team->addpo($teammember);
+                $team->addProductOwner($teammember);
             }
             else if(Input::get('role')=='tm')
             {
-                $team->addtm($teammember);
+                $team->addTeamMember($teammember);
             }
             $team->addTeaminUsers($teammember,$teamid);
             $team->addUserInteamMembers($teammember,$teamid);
@@ -50,11 +50,11 @@ class TeamController extends \BaseController {
         return "Can't add this email.";
     }
 
-    public function deletepo($tid, $poname)
+    public function deleteProductOwner($tid, $poname)
     {
         //Delete in Teams Collection.
         $team = Team::find($tid);
-        $team->deletepo($poname);
+        $team->deleteProductOwner($poname);
           $team->deleteInteamMembers($poname);
         //Delete in Users Collection.
          if(!($team->findInTm($poname) && ($team->findInMaster($poname))))
@@ -65,11 +65,11 @@ class TeamController extends \BaseController {
         return Redirect::to('/main');       
     }
 
-      public function deletetm($tid, $tmname)
+      public function deleteTeamMember($tid, $tmname)
     {
         //Delete in Teams Collection.
         $team = Team::find($tid);
-        $team->deletetm($tmname);
+        $team->deleteTeamMember($tmname);
         $team->deleteInteamMembers($tmname);
 
         //Delete in Users Collection.

@@ -19,7 +19,7 @@ class Team extends Eloquent {
     }
 
     //Function for add product owner. 
-    public function addpo($name)
+    public function addProductOwner($name)
     {
         if($this->po==null){
             $this->po = array($name);
@@ -34,7 +34,7 @@ class Team extends Eloquent {
     }
 
     //Function for add Teammember.
-    public function addtm($name)
+    public function addTeamMember($name)
     {
         if($this->tm==null){
             $this->tm = array($name);
@@ -86,8 +86,8 @@ class Team extends Eloquent {
         $this->save();
     }
 
-    //Delete Prooduct owner.
-    public function deletepo($poname)
+    //Delete Product owner.
+    public function deleteProductOwner($poname)
     {
         $po = $this->po;
         $key = array_search($poname,$po);
@@ -97,7 +97,7 @@ class Team extends Eloquent {
     }
 
     //Delete TeamMember.
-    public function deletetm($tmname)
+    public function deleteTeamMember($tmname)
     {
         $tm = $this->tm;
         $key = array_search($tmname,$tm);
