@@ -44,10 +44,10 @@ Route::post('/recievedboard', 'SprintnameController@store');
 Route::get('taskboard/{id}/{bid}/delete',array('before' => 'auth' ,'uses'=>'TaskboardController@deleteTaskboard'));
 
 //DELETE PO.
-Route::get('/deletetaskboard/po/{tid}/{poname}',array('before' => 'auth' ,'uses'=>'TeamController@deletepo'));
+Route::get('/deletetaskboard/po/{tid}/{poname}',array('before' => 'auth' ,'uses'=>'TeamController@deleteProductOwner'));
 
 //DELETE TM.
-Route::get('/deletetaskboard/tm/{tid}/{tmname}',array('before' => 'auth' ,'uses'=>'TeamController@deletetm'));
+Route::get('/deletetaskboard/tm/{tid}/{tmname}',array('before' => 'auth' ,'uses'=>'TeamController@deleteTeamMember'));
 
 //ADD TEAM
 Route::post('/addteam', array('before' => 'auth' ,'uses'=>'TeamController@store'));
