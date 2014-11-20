@@ -1,7 +1,7 @@
 @extends('layouts.base')
 
 @section('body')
-	<div id="home" class="jumbotron" style="margin-top:0px; margin-bottom:0px; background: url('http://laravel.com/assets/img/header.jpg') center no-repeat #f4726d; height:90%; overflow:hidden position:relative;">
+	<div id="home" class="jumbotron" style="margin-top:0px; margin-bottom:0px; background: url('media/img/bg.jpg') center no-repeat #f4726d; height:90%; overflow:hidden position:relative;">
 		<h1 style="color:#fff; text-align:center; ">Scrum Framework</h1>
 		<div class="col-md-5"  align="center" style="margin:0 auto; display:block; float:none;">
 			<button type="button" class="btn btn-default btn-lg" data-toggle="modal" data-target="#userSignup" style="width:30%; opacity: 0.9; background-color:#f4726d; color:#fff;">Sign up</button>
@@ -86,7 +86,7 @@
 				<form role="form" method="post" action="{{ url('/main') }}">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-						<h4 class="modal-title" id="myModalLabel">Sign up</h4>
+						<h4 class="modal-title" id="myModalLabel">Log in</h4>
 					</div>
 					<div class="modal-body">
 						<div class="form-group">
